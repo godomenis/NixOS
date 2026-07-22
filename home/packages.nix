@@ -5,7 +5,6 @@
     teams-for-linux
     mpv
     mpvpaper
-    obs-studio
     onlyoffice-desktopeditors
     (zathura.override { 
       plugins = [ zathuraPkgs.zathura_pdf_mupdf zathuraPkgs.zathura_cb zathuraPkgs.zathura_djvu ]; 
@@ -13,11 +12,14 @@
     fastfetch
     eza
     file-roller
-    joplin-desktop
     bat
     bottom
+    guvcview
+    resources
     baobab
+    mousepad
     loupe
+    catppuccin-cursors.frappeLight
     xwayland-satellite
     steam-run
     protonup-qt

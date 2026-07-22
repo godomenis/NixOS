@@ -1,19 +1,18 @@
 { pkgs, ... }:
 {
+  services.xserver.enable = true;
+  services.xserver.desktopManager.xterm.enable = false;
+  services.xserver.excludePackages = [ pkgs.xterm ];
+
   services.displayManager.sddm = {
     enable = true;
-    wayland.enable = true;
-    autoNumlock = true;
     settings = {
       General = {
         InputMethod = "";
+        Numlock = "on";
       };
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    libsForQt5.qt5.qtgraphicaleffects
-  ];
 
   programs.qylock = {
     enable = true;

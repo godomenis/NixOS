@@ -6,10 +6,6 @@
       main = { 
         font = "JetBrainsMono Nerd Font:size=12";
       };
-      
-      keybindings = {
-        select-all = "Control+Shift+a";
-      };
     };
   };
 
