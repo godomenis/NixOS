@@ -1,13 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    extraCompatPackages = with pkgs; [ proton-ge-bin ];
+    dedicatedServer.openFirewall = true;    
     gamescopeSession.enable = true;
+    extraCompatPackages = with pkgs; [ proton-ge-bin ];
   };
-
+  
   programs.gamescope.enable = true;
   programs.gamescope.capSysNice = true;
 
@@ -25,4 +25,5 @@
   environment.sessionVariables = {
     MESA_SHADER_CACHE_MAX_SIZE = "12G";
   };
+
 }

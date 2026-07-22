@@ -1,12 +1,13 @@
 {
   imports = [
-    ./apps.nix
-    ./firefox.nix
-    ./foot.nix
-    ./zsh.nix
-    ./fastfetch.nix
+    ./packages.nix
+    ./programs/firefox.nix
+    ./programs/foot.nix
+    ./programs/zsh.nix
+    ./programs/mangohud.nix
+    ./programs/fastfetch.nix
+    ./programs/noctalia.nix
     ./niri/niri.nix
-    ./noctalia/noctalia.nix
   ];
 
   home.username = "godo";

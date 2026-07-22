@@ -8,9 +8,5 @@
         setSocketVariable = true;
       };
     };
-    
-    waydroid.enable = true;
   };
-
-  networking.firewall.trustedInterfaces = [ "waydroid0" ];
 }

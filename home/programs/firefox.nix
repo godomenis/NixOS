@@ -9,16 +9,19 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
         };
+        
         "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
           installation_mode = "force_installed";
         };
-        "@testpilot-containers" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi";
+        
+        "{78cbdb27-65ea-4a4c-ba54-0999f978a13b}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/animated-fox-crossing/latest.xpi";
           installation_mode = "force_installed";
         };
-        "jid1-ZAdIEUB7XOzOJw@jetpack" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/duckduckgo-for-firefox/latest.xpi";
+        
+        "sponsorBlocker@ajay.app" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorblock/latest.xpi";
           installation_mode = "force_installed";
         };
       };
@@ -45,18 +48,6 @@
           "spa-0"
         ];
       };
-
-      "3rdparty".Extensions."@testpilot-containers".adminSettings = {
-        "siteContainerMap" = {
-          "utcj.edu.mx" = "UTCJ";
-          "microsoft.com" = "UTCJ";
-          "microsoftonline.com" = "UTCJ";
-          "office.com" = "UTCJ";
-          "netacad.com" = "UTCJ";
-          "cambridgeone.org" = "UTCJ";
-          "live.com" = "UTCJ";
-        };
-      };
     };
     
     profiles.godo = {
@@ -71,6 +62,7 @@
             bookmarks = [
               { name = "DeepSeek"; url = "https://chat.deepseek.com/"; }
               { name = "Bolt AI";  url = "https://bolt.new/"; }
+              { name = "Claude";   url = "https://claude.ai/new"; }
               { name = "Canva";    url = "https://www.canva.com/"; }
               { name = "GitHub";   url = "https://github.com/"; }
               { name = "WhatsApp"; url = "https://web.whatsapp.com/"; }
@@ -89,7 +81,7 @@
       };
 
       settings = {
-        "browser.startup.homepage" = "https://duckduckgo.com";
+        "browser.startup.homepage" = "https://www.google.com";
         "browser.search.region" = "MX";
         "distribution.searchplugins.defaultLocale" = "es-MX";
 
@@ -98,6 +90,9 @@
         "privacy.trackingprotection.socialtracking.enabled" = true;
         "dom.security.https_only_mode" = true; 
         "browser.send_pings" = false;         
+        "privacy.fingerprintingProtection" = true;
+        "dom.battery.enabled" = false;
+        "browser.urlbar.suggest.quicksuggest.sponsored" = false;
 
         "toolkit.telemetry.enabled" = false;
         "browser.newtabpage.activity-stream.feeds.telemetry" = false;
@@ -109,47 +104,31 @@
 
         "gfx.webrender.all" = true;
         "media.ffmpeg.vaapi.enabled" = true;
-
         "layout.frame_rate" = 120;
         "toolkit.cosmeticAnimations.enabled" = false;
         "gfx.webrender.compositor" = true;
         "gfx.webrender.precache-shaders" = true;
         
-        "privacy.fingerprintingProtection" = true;
-        "dom.battery.enabled" = false;
-        "browser.urlbar.suggest.quicksuggest.sponsored" = false;
-        
         "media.autoplay.default" = 5;
         "media.volume_scale" = "1.0";
-
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       };
 
       search = {
         force = true;
-        default = "ddg"; 
+        default = "google"; 
         engines = {
-          "Nix Packages" = {
-            urls = [{ template = "https://search.nixos.org/packages?query={searchTerms}"; }];
+          "Nix Packages" = { 
+            urls = [{ template = "https://search.nixos.org/packages?query={searchTerms}"; }]; 
             icon = "https://nixos.org/favicon.png"; 
-            updateInterval = 24 * 60 * 60 * 1000;
-            definedAliases = [ "@np" ];
+            updateInterval = 24 * 60 * 60 * 1000; 
+            definedAliases = [ "@np" ]; 
           };
-          "NixOS Wiki" = {
-            urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
-            definedAliases = [ "@nw" ];
-          };
-          "google" = { 
-            definedAliases = [ "@g" ];
+          "NixOS Wiki" = { 
+            urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }]; 
+            definedAliases = [ "@nw" ]; 
           };
         };
       };
-
-      containers = {
-        personal = { id = 1; name = "Personal";  color = "blue";  icon = "fingerprint"; };
-        utcj     = { id = 2; name = "UTCJ";      color = "green"; icon = "briefcase"; }; 
-      };
-      containersForce = true;
     };
   };
 }

@@ -33,6 +33,13 @@
     shell = pkgs.zsh;
   };
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d";
+    flake = "/home/godo/NixOS#desktop";
+  };
+
   zramSwap = {
     enable = true;
     memoryPercent = 100;
@@ -40,28 +47,22 @@
   };
 
   fonts = {
-      enableDefaultPackages = true;
-      fontDir.enable = true;
-      packages = with pkgs; [
-        corefonts
-        nerd-fonts.jetbrains-mono
-        vista-fonts
-        liberation_ttf
-      ];
-      fontconfig = {
-        enable = true;
-        defaultFonts = {
-          serif = [ "Times New Roman" ];
-          sansSerif = [ "Arial" ];
-          monospace = [ "JetBrainsMono Nerd Font" ];
-        };
+    enableDefaultPackages = true;
+    fontDir.enable = true;
+    packages = with pkgs; [
+      corefonts
+      nerd-fonts.jetbrains-mono
+      vista-fonts
+      liberation_ttf
+    ];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [ "Times New Roman" ];
+        sansSerif = [ "Arial" ];
+        monospace = [ "JetBrainsMono Nerd Font" ];
       };
     };
-
-  nix.gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
   };
 
   environment.systemPackages = with pkgs; [ 
@@ -70,5 +71,6 @@
   micro 
   tree 
   unzip 
+  glib
   ripgrep ];
 }

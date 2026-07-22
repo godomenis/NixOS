@@ -1,0 +1,133 @@
+{ ... }:
+{
+  xdg.configFile."fastfetch/config.jsonc".text = ''
+    {
+      "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+      "logo": {
+        "source": "~/.config/fastfetch/ascii.txt",
+        "padding": {
+          "top": 2,
+          "right": 2
+        },
+        "color": {
+          "1": "magenta"
+        }
+      },
+      "display": {
+        "separator": " ➜  "
+      },
+      "modules": [
+        "break",
+        {
+          "type": "title",
+          "color": {
+            "user": "magenta",
+            "at": "white",
+            "host": "blue"
+          }
+        },
+        "break",
+        {
+          "type": "custom",
+          "format": "┌────────────── Hardware ──────────────┐",
+          "outputColor": "green"
+        },
+        {
+          "type": "host",
+          "key": "󰌢 PC",
+          "keyColor": "green"
+        },
+        {
+          "type": "cpu",
+          "key": "󰻠 CPU",
+          "keyColor": "green"
+        },
+        {
+          "type": "gpu",
+          "key": "󰍛 GPU",
+          "keyColor": "green"
+        },
+        {
+          "type": "memory",
+          "key": "󰑭 RAM",
+          "keyColor": "green"
+        },
+        {
+          "type": "custom",
+          "format": "└──────────────────────────────────────┘",
+          "outputColor": "green"
+        },
+        "break",
+        {
+          "type": "custom",
+          "format": "┌────────────── Software ──────────────┐",
+          "outputColor": "yellow"
+        },
+        {
+          "type": "os",
+          "key": "󰣇 OS",
+          "keyColor": "yellow"
+        },
+        {
+          "type": "kernel",
+          "key": "󰒔 KER",
+          "keyColor": "yellow"
+        },
+        {
+          "type": "shell",
+          "key": "󰞷 SH ",
+          "keyColor": "yellow"
+        },
+        {
+          "type": "custom",
+          "format": "└──────────────────────────────────────┘",
+          "outputColor": "yellow"
+        },
+        "break",
+        {
+          "type": "custom",
+          "format": "┌────────────── Desktop ───────────────┐",
+          "outputColor": "blue"
+        },
+        {
+          "type": "wm",
+          "key": "󱂬 WM",
+          "keyColor": "blue"
+        },
+        {
+          "type": "terminal",
+          "key": "󰞷 TRM",
+          "keyColor": "blue"
+        },
+        {
+          "type": "custom",
+          "format": "└──────────────────────────────────────┘",
+          "outputColor": "blue"
+        },
+        "break",
+        {
+          "type": "colors",
+          "symbol": "circle"
+        }
+      ]
+    }
+  '';
+
+  xdg.configFile."fastfetch/ascii.txt".text = ''
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⠇⠀⠀⢻
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⣾⡄
+⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡏⠀⠀⣰⣟⡧
+⠀⠀⠉⠲⢄⡀⠀⠀⠀⠀⠀⠀⡇⠀⠀⣯⡟⣽⡀
+⠀⠀⠀⠀⠀⠉⠲⢄⠀⠀⠀⣀⣧⣤⣾⣷⣿⣽⣳⡀
+⠐⢶⣦⣤⣀⠀⠀⠀⣉⠶⣞⡿⣽⡾⣯⡿⠟⠉⠉⠙⢦
+⠀⠀⠻⣿⣿⣿⣿⣾⣿⣻⣽⣟⣷⣟⣯⠁⠀⠀⠀⠀⠀⢧⡤⣀
+⠀⠀⠀⢽⣿⣟⣾⣿⣳⣟⣾⣽⣾⣻⡇⠀⠀⠀⠀⠀⢀⣴⡻⠋⠁
+⠀⠀⠀⣨⠟⠋⠉⠻⠿⣿⣿⣿⣿⣽⣟⠄⢨⡿⣟⡿⣟⣯⡽⠶⠂
+⠀⠀⠀⣿⠁⠀⠀⠀⠀⢹⣿⣿⣿⣷⣯⡗⠀⢹⣯⣟⣷⢻⡙⢤⡀
+⠀⠀⠀⣿⣶⣶⣷⣾⣿⣿⣟⣿⣿⣿⠟⠁⠀⣼⣿⣾⡭⠗⢋⡠⠔
+⠀⠀⠀⠹⣷⣻⣽⣻⣽⣿⣿⣿⣿⣧⢚⠥⣴⢯⡟⡴⢊⠁⠀⠀⠐⠂
+⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠈⠙⠚⠓⠁⠀⠀⢀⠤⡀
+⠀⠀⠀⠀⠀⠀⠉⠻⣿⣿⣿⣿⣿⣿⢯⣵⣤⣀⡀⢀⠀⡀⠐⡀⢦⡽
+  '';
+}

@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     vesktop
     teams-for-linux
-    deezer-desktop
     mpv
     mpvpaper
     obs-studio
@@ -11,19 +10,17 @@
     (zathura.override { 
       plugins = [ zathuraPkgs.zathura_pdf_mupdf zathuraPkgs.zathura_cb zathuraPkgs.zathura_djvu ]; 
     })
-    yazi
     fastfetch
     eza
     file-roller
     joplin-desktop
     bat
-    btop
-    fzf
+    bottom
+    baobab
+    loupe
     xwayland-satellite
-    mangohud
     steam-run
     protonup-qt
-    glib
     adwaita-icon-theme
     gnome-themes-extra
   ];

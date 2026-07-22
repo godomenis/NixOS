@@ -35,13 +35,11 @@
       lt = "eza --tree --level=2 --icons=always";
       
       cat = "bat --style=plain --paging=never";
-      
-      nx = "sudo nixos-rebuild switch --flake ~/NixOS#desktop";
+      catall = "bat --style=header --paging=never $(find . -type f -not -path '*/.*' | sort)";
       
       ".." = "cd ..";
       "..." = "cd ../..";
       
-      c = "clear";
     };
 
     oh-my-zsh = {
@@ -58,6 +56,12 @@
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-direnv.enable = true;
   };
 
   programs.oh-my-posh = {

@@ -1,14 +1,23 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
-  programs.noctalia-greeter = {
+  services.displayManager.sddm = {
     enable = true;
-    package = inputs.noctalia-greeter.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    greeter-args = "--user godo --session niri";
+    wayland.enable = true;
+    autoNumlock = true;
     settings = {
-      cursor = { theme = "Adwaita"; size = 24; };
-      keyboard = { layout = "latam"; options = "numlock:on"; };
-      output = { scale = 1.67; };
+      General = {
+        InputMethod = "";
+      };
     };
+  };
+
+  environment.systemPackages = with pkgs; [
+    libsForQt5.qt5.qtgraphicaleffects
+  ];
+
+  programs.qylock = {
+    enable = true;
+    theme = "enfield";
   };
 
   programs.niri.enable = true;

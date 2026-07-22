@@ -9,21 +9,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    qylock.url = "github:Darkkal44/qylock";
 
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
   };
 
-  outputs = { self, nixpkgs, home-manager, noctalia-greeter, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, qylock, ... }@inputs: {
     nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./hosts/desktop/configuration.nix
-        noctalia-greeter.nixosModules.default
+        ./hosts/configuration.nix
+        qylock.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
