@@ -3,21 +3,13 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     initContent = ''
-      fastfetch
-
-      function y() {
-      	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-      	yazi "$@" --cwd-file="$tmp"
-      	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-      		builtin cd -- "$cwd"
-      	fi
-      	rm -f -- "$tmp"
-      }
+      if [[ -o interactive ]]; then
+        fastfetch
+      fi
     '';
 
     history = {
@@ -33,22 +25,21 @@
       ll = "eza -alF --icons=always --color=always --group-directories-first";
       la = "eza -a --icons=always --color=always --group-directories-first";
       lt = "eza --tree --level=2 --icons=always";
-      
+
       cat = "bat --style=plain --paging=never";
       catall = "bat --style=header --paging=never $(find . -type f -not -path '*/.*' | sort)";
-      
+
       ".." = "cd ..";
       "..." = "cd ../..";
-      
     };
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ 
-        "git" 
-        "sudo" 
-        "docker" 
-        "extract" 
+      plugins = [
+        "git"
+        "sudo"
+        "docker"
+        "extract"
       ];
     };
   };

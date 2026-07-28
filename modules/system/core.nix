@@ -1,9 +1,20 @@
 { pkgs, ... }:
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.loader = {
+    timeout = 8;
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true;
+      configurationLimit = 15;
+      theme = ../../yorha-grub-theme/yorha-2560x1440;
+    };
+  };
+
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  boot.kernelParams = [ "amd_pstate=active" ];
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -14,11 +25,7 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-      "pnpm-10.29.2"
-  ];
 
-  networking.networkmanager.enable = true;
   time.timeZone = "America/Ciudad_Juarez";
   i18n.defaultLocale = "es_MX.UTF-8";
   services.xserver.xkb = { layout = "latam"; variant = ""; };
@@ -46,6 +53,14 @@
     algorithm = "zstd";
   };
 
+  # OPTIMIZACIÓN: Mantenimiento BTRFS y SSD
+  services.fstrim.enable = true;
+  services.btrfs.autoScrub = {
+    enable = true;
+    interval = "monthly";
+    fileSystems = [ "/" ];
+  };
+
   fonts = {
     enableDefaultPackages = true;
     fontDir.enable = true;
@@ -65,12 +80,13 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ 
-  wget 
-  git 
-  micro 
-  tree 
-  unzip 
-  glib
-  ripgrep ];
+  environment.systemPackages = with pkgs; [
+    wget
+    git
+    micro
+    tree
+    unzip
+    glib
+    ripgrep
+  ];
 }

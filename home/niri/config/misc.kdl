@@ -2,7 +2,6 @@
     screenshot-path "~/Pictures/Screenshots/Captura-%Y-%m-%d-%H-%M-%S.png"
 
     environment {
-            ELECTRON_OZONE_PLATFORM_HINT "wayland"
             QT_QPA_PLATFORM "wayland"
             QT_QPA_PLATFORMTHEME "gtk3"
             QT_WAYLAND_DISABLE_WINDOWDECORATION "1"

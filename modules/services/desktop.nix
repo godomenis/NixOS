@@ -4,8 +4,11 @@
   services.xserver.desktopManager.xterm.enable = false;
   services.xserver.excludePackages = [ pkgs.xterm ];
 
+  services.displayManager.defaultSession = "niri";
+
   services.displayManager.sddm = {
     enable = true;
+    wayland.enable = true;
     settings = {
       General = {
         InputMethod = "";
@@ -32,6 +35,6 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
-    config.common.default = "*";
+    config.common.default = "gtk";
   };
 }

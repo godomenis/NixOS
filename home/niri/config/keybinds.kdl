@@ -23,7 +23,7 @@ binds {
     // =========================================================
     //    3. APLICACIONES BASE Y PRODUCTIVIDAD
     // =========================================================
-    Mod+T             hotkey-overlay-title="Terminal" { spawn "foot"; }
+    Mod+T             hotkey-overlay-title="Terminal" { spawn "alacritty"; }
     
     // ¡Actualizado según tu captura de pantalla!
     Mod+B             hotkey-overlay-title="Navegador" { spawn "firefox"; }
@@ -43,7 +43,6 @@ binds {
     Mod+Shift+D       hotkey-overlay-title="Modo Oscuro/Claro" { spawn-sh "noctalia msg theme-mode-toggle"; }
     Mod+Shift+I       hotkey-overlay-title="Toggle Cafeína" { spawn-sh "noctalia msg caffeine-toggle"; }
     Mod+Alt+W         hotkey-overlay-title="Selector de Fondos" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
-    Mod+Shift+C       hotkey-overlay-title="Toggle Blur Global" { spawn "bash" "-c" "if [ -f ~/.config/niri/cfg/efecto-blur.kdl ]; then mv ~/.config/niri/cfg/efecto-blur.kdl ~/.config/niri/cfg/efecto-blur.off; else mv ~/.config/niri/cfg/efecto-blur.off ~/.config/niri/cfg/efecto-blur.kdl; fi"; }
 
     Mod+CTRL+W        hotkey-overlay-title="Toggle Wi-Fi" { spawn-sh "noctalia msg wifi-toggle"; }
     Mod+CTRL+B        hotkey-overlay-title="Toggle Bluetooth" { spawn-sh "noctalia msg bluetooth-toggle"; }

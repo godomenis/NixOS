@@ -2,7 +2,7 @@
   imports = [
     ./packages.nix
     ./programs/firefox.nix
-    ./programs/foot.nix
+    ./programs/alacritty.nix
     ./programs/zsh.nix
     ./programs/mangohud.nix
     ./programs/fastfetch.nix

@@ -6,19 +6,22 @@
     mpv
     mpvpaper
     onlyoffice-desktopeditors
-    (zathura.override { 
-      plugins = [ zathuraPkgs.zathura_pdf_mupdf zathuraPkgs.zathura_cb zathuraPkgs.zathura_djvu ]; 
-    })
     fastfetch
     eza
     file-roller
     bat
     bottom
     guvcview
+    gh
     resources
+    nix-output-monitor
     baobab
+    kdePackages.okular
     mousepad
+    alacritty
+    qalculate-gtk
     loupe
+    wdisplays
     catppuccin-cursors.frappeLight
     xwayland-satellite
     steam-run
@@ -32,15 +35,14 @@
     MOZ_ENABLE_WAYLAND = "1";
     GTK_USE_PORTAL = "1";
     LIBVA_DRIVER_NAME = "radeonsi";
-    PDF_VIEWER = "zathura";
-    READER = "zathura";
-    GTK_THEME = "Adwaita:dark"; 
+    GTK_THEME = "Adwaita-dark";
     QT_STYLE_OVERRIDE = "Adwaita-Dark";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
   };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      gtk-theme = "Adwaita-dark"; 
+      gtk-theme = "Adwaita-dark";
       color-scheme = "prefer-dark";
     };
   };
