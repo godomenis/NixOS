@@ -11,14 +11,18 @@
     file-roller
     bat
     bottom
+    wl-clipboard
+    pavucontrol
     guvcview
     gh
+    easyeffects
     resources
     nix-output-monitor
     baobab
     kdePackages.okular
     mousepad
     alacritty
+    alejandra
     qalculate-gtk
     loupe
     wdisplays

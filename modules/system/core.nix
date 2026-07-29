@@ -13,7 +13,7 @@
     };
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelParams = [ "amd_pstate=active" ];
 
   nix.settings = {
@@ -25,6 +25,9 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
+  services.logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
 
   time.timeZone = "America/Ciudad_Juarez";
   i18n.defaultLocale = "es_MX.UTF-8";
@@ -53,7 +56,6 @@
     algorithm = "zstd";
   };
 
-  # OPTIMIZACIÓN: Mantenimiento BTRFS y SSD
   services.fstrim.enable = true;
   services.btrfs.autoScrub = {
     enable = true;
@@ -61,24 +63,46 @@
     fileSystems = [ "/" ];
   };
 
-  fonts = {
-    enableDefaultPackages = true;
-    fontDir.enable = true;
-    packages = with pkgs; [
-      corefonts
-      nerd-fonts.jetbrains-mono
-      vista-fonts
-      liberation_ttf
-    ];
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        serif = [ "Times New Roman" ];
-        sansSerif = [ "Arial" ];
-        monospace = [ "JetBrainsMono Nerd Font" ];
-      };
+  services.snapper.configs = {
+    home = {
+      SUBVOLUME = "/home";
+      ALLOW_USERS = [ "godo" ];
+      TIMELINE_CREATE = true;
+      TIMELINE_CLEANUP = true;
     };
   };
+
+  fonts = {
+      enableDefaultPackages = true;
+      fontDir.enable = true;
+      packages = with pkgs; [
+        corefonts
+        vista-fonts
+        liberation_ttf
+  
+        comfortaa
+        quicksand
+        nunito
+        inter
+        roboto
+        noto-fonts
+        noto-fonts-cjk-sans
+        noto-fonts-color-emoji
+  
+        nerd-fonts.jetbrains-mono
+        nerd-fonts.fira-code
+      ];
+      
+      fontconfig = {
+        enable = true;
+        defaultFonts = {
+          sansSerif = [ "Comfortaa" "Quicksand" "Inter" "Arial" ];
+          serif = [ "Noto Serif" "Times New Roman" ];
+          monospace = [ "JetBrainsMono Nerd Font" ];
+          emoji = [ "Noto Color Emoji" ];
+        };
+      };
+    };
 
   environment.systemPackages = with pkgs; [
     wget
@@ -90,3 +114,4 @@
     ripgrep
   ];
 }
+

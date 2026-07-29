@@ -3,6 +3,33 @@ window-rule {
     clip-to-geometry true
     opacity 0.85
     draw-border-with-background false
+    
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+window-rule {
+    match app-id="dev.noctalia.Noctalia"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+layer-rule {
+    match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+    background-effect {
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="noctalia-window-switcher"
+    background-effect {
+        blur true
+        xray false
+    }
 }
 
 window-rule {
@@ -32,4 +59,11 @@ window-rule {
     match app-id="ONLYOFFICE"
     match app-id="mpv"
     open-maximized true
+}
+
+blur {
+    passes 2      
+    offset 2.0  
+    noise 0.02    
+    saturation 1.3
 }

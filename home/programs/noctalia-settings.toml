@@ -1,0 +1,309 @@
+[accessibility]
+ui_scale = 1.1000000089406967
+
+[audio]
+enable_overdrive = true
+enable_sounds = true
+sound_volume = 0.29999999329447746
+
+[backdrop]
+enabled = false
+
+[bar.default]
+background_opacity = 0.59999998658895493
+center = [ "group:g6", "group:g9" ]
+contact_shadow = true
+end = [ "group:g5", "group:g4", "group:g3" ]
+margin_edge = 8
+padding = 10
+position = "left"
+radius = 15
+start = [ "group:g1", "group:g2", "group:g8", "group:g7" ]
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "control-center", "session" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g4"
+    members = [ "battery", "nix-monitor" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g5"
+    members = [ "network", "bluetooth", "volume", "brightness" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g7"
+    members = [ "recorder", "bar" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "wallpaper" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "workspaces" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g8"
+    members = [ "media", "notifications", "tray" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g6"
+    members = [ "clock" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g9"
+    members = [ "cat" ]
+    opacity = 1.0
+    padding = 6.0
+
+[control_center]
+width = 650
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[location]
+auto_locate = true
+
+[lockscreen]
+blur_intensity = 0.04999999888241291
+blurred_desktop = false
+wallpaper = "/home/godo/Pictures/Wallpapers/cattoween.png"
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 768.0
+    cy = 841.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+
+[notification]
+background_opacity = 0.54999998770654202
+border = true
+layer = "overlay"
+scale = 0.85000000521540642
+
+[osd]
+background_opacity = 0.4999999888241291
+offset_y = 10
+orientation = "vertical"
+position_vertical = "center_right"
+scale = 0.80000000447034836
+
+[plugin_settings."avivbintangaringga/nix-monitor"]
+update_command = "alacritty -e nh os switch --update"
+
+[plugin_settings."noctalia/mpvpaper"]
+video_directory = "/home/godo/Pictures/LiveWallpapers/"
+
+[plugin_settings."noctalia/notes"]
+extension = "md"
+panel_placement = "attached"
+
+[plugins]
+enabled = [ "noctalia/screen_recorder", "avivbintangaringga/nix-monitor", "dotnetrob/cat", "yuuto/calculator" ]
+
+[shell]
+app_icon_color = "primary"
+button_borders = true
+clipboard_keep_from_closed_apps = true
+corner_radius_scale = 1.5000000223517418
+font_family = "Comfortaa"
+input_borders = true
+lang = "es"
+launch_apps_as_systemd_services = true
+niri_overview_type_to_launch_enabled = true
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+
+    [shell.animation]
+    speed = 1.7500000260770321
+
+    [shell.launcher]
+    app_grid = true
+
+    [shell.panel]
+    borders = true
+    list_item_background = true
+    open_near_click_control_center = true
+    session_placement = "floating"
+    session_position = "center"
+    transparency_mode = "soft"
+    wallpaper_placement = "floating"
+    wallpaper_position = "bottom_center"
+
+    [shell.screenshot]
+    confirm_region = true
+    directory = "/home/godo/Pictures/Screenshots"
+
+    [shell.session]
+    grid_columns = 1
+
+    [shell.shadow]
+    alpha = 0.79999998211860657
+    direction = "right"
+
+[system.monitor]
+enabled = true
+gpu_poll_seconds = 5
+
+[theme]
+builtin = "Dracula"
+community_palette = "Catppuccin Lavender"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "soft"
+
+    [theme.templates]
+    builtin_ids = [ "alacritty", "cava", "gtk3", "gtk4", "kcolorscheme", "niri", "qt" ]
+
+[wallpaper]
+directory = "/home/godo/Pictures/Wallpapers"
+enabled = true
+transition = [ "fade", "stripes", "wipe" ]
+transition_duration = 1000
+
+    [wallpaper.default]
+    path = "/home/godo/Pictures/Wallpapers/space.png"
+
+    [wallpaper.last]
+    path = "/home/godo/Pictures/Wallpapers/space.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/godo/Pictures/Wallpapers/space.png"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/godo/Pictures/Wallpapers/1r1kk9qi00961.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "dysfunctional"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/godo/Pictures/Wallpapers/nord-dark-mountains.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "soft"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/godo/Pictures/Wallpapers/original-anime-cyberpunk-edgerunners.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "soft"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/godo/Pictures/Wallpapers/original-anime-death-stranding.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "soft"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/godo/Pictures/Wallpapers/panes.jpg"
+    theme_mode = "dark"
+    wallpaper_scheme = "dysfunctional"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/godo/Pictures/Wallpapers/pixel-earth.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "soft"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/godo/Pictures/Wallpapers/space.png"
+    theme_mode = "dark"
+    wallpaper_scheme = "dysfunctional"
+
+[weather]
+enabled = true
+
+[widget.bar]
+type = "yuuto/calculator:bar"
+
+[widget.brightness]
+show_label = false
+
+[widget.cat]
+type = "dotnetrob/cat:cat"
+walk_threshold = 10
+
+[widget.network]
+show_label = false
+
+[widget.nix-monitor]
+show_text = false
+type = "avivbintangaringga/nix-monitor:nix-monitor"
+
+[widget.recorder]
+type = "noctalia/screen_recorder:recorder"
+
+[widget.volume]
+show_label = false

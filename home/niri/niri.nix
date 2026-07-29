@@ -1,3 +1,4 @@
 { config, pkgs, ... }:
 {
-xdg.configFile."niri".source = ./config;}
+  xdg.configFile."niri".source = ./config;
+}
