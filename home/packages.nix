@@ -23,7 +23,6 @@
     mousepad
     alacritty
     alejandra
-    qalculate-gtk
     loupe
     wdisplays
     catppuccin-cursors.frappeLight
